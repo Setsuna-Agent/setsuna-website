@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { subscribeTheme } from "@/lib/theme";
 
 export function HeroSculpture() {
   const hostRef = useRef<HTMLDivElement>(null);
@@ -36,7 +37,6 @@ export function HeroSculpture() {
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
       renderer.setClearColor(0x000000, 0);
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.05;
       host.appendChild(renderer.domElement);
 
       const scene = new THREE.Scene();
@@ -62,6 +62,13 @@ export function HeroSculpture() {
 
       function render() {
         renderer.render(scene, camera);
+      }
+
+      function syncTheme() {
+        renderer.toneMappingExposure = Number(
+          getComputedStyle(host!).getPropertyValue("--sculpture-exposure"),
+        );
+        render();
       }
 
       function animate(now: number) {
@@ -112,6 +119,10 @@ export function HeroSculpture() {
         pointer.y = 0;
       }
 
+      // Adjust lighting in place so switching themes keeps the existing scene.
+      const unsubscribeTheme = subscribeTheme(syncTheme);
+      syncTheme();
+
       const resize = new ResizeObserver(([entry]) => {
         const { width, height } = entry.contentRect;
         if (!width || !height) return;
@@ -139,6 +150,7 @@ export function HeroSculpture() {
         cancelAnimationFrame(frame);
         resize.disconnect();
         visibility.disconnect();
+        unsubscribeTheme();
         host.removeEventListener("pointermove", onPointerMove);
         host.removeEventListener("pointerleave", onPointerLeave);
         document.removeEventListener("visibilitychange", syncAnimation);

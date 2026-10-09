@@ -4,9 +4,9 @@ export const en: Messages = {
   metadata: {
     title: "Setsuna Desktop — Open-source AI coding assistant",
     description:
-      "Setsuna is an open-source desktop AI coding assistant. Bring AI conversations, code changes, pull requests, and development tools into one workspace on macOS and Windows.",
+      "Setsuna is an open-source desktop AI coding assistant for macOS and Windows. Code, review pull requests, schedule local tasks, control desktop apps, and build sidebar apps in one workspace.",
     openGraphDescription:
-      "An open-source desktop AI coding assistant for macOS and Windows.",
+      "An open-source desktop AI coding assistant with code review, local automations, and an app builder.",
   },
   common: {
     home: "Setsuna home",
@@ -18,6 +18,8 @@ export const en: Messages = {
     workspace: "Workspace",
     download: "Download",
     source: "View source on GitHub",
+    lightMode: "Switch to light mode",
+    darkMode: "Switch to dark mode",
   },
   hero: {
     description: "Your open-source desktop AI coding assistant.",
@@ -30,17 +32,32 @@ export const en: Messages = {
       conversation: {
         title: "Project chat",
         description:
-          "Work on code and terminal tasks with your project in context.",
+          "Code with project context. Search or fork chats and continue in a separate window or Git worktree.",
       },
       files: {
         title: "File management",
         description:
-          "Browse, search, edit, and preview files. Manage your project folders.",
+          "Browse, search, and edit project files. Preview Markdown and images, and manage folders.",
       },
       browser: {
-        title: "Browser & CDP",
+        title: "Built-in browser",
         description:
-          "Read pages, click, type, and capture screenshots in the built-in browser via CDP.",
+          "Control pages via CDP, annotate elements, and autofill passwords. Install or import compatible Chrome extensions.",
+      },
+      computerControl: {
+        title: "Computer control",
+        description:
+          "Enable screenshots, clicks, typing, and scrolling to let AI operate macOS or Windows apps.",
+      },
+      automations: {
+        title: "Local automations",
+        description:
+          "Schedule local tasks from chat or a form. Run while Setsuna is open and revisit execution history.",
+      },
+      appBuilder: {
+        title: "App builder",
+        description:
+          "Turn a template or idea into a sidebar app. Refine it in chat and reference it with @.",
       },
       localTools: {
         title: "Local tools",
@@ -49,11 +66,13 @@ export const en: Messages = {
       },
       review: {
         title: "Code review",
-        description: "Inspect code diffs and manage pull requests.",
+        description:
+          "Inspect code diffs and Markdown previews. Manage pull requests and check results.",
       },
       models: {
         title: "Model selection",
-        description: "Connect and switch between the model providers you use.",
+        description:
+          "Connect model providers, switch models, and adjust reasoning effort.",
       },
       proxy: {
         title: "Proxy servers",
@@ -67,25 +86,48 @@ export const en: Messages = {
       },
       extensions: {
         title: "Extensions",
-        description: "Add tools through plugins, Skills, and MCP.",
+        description:
+          "Extend tasks with plugins, Skills, MCP, and Hooks. View their execution records in chat.",
       },
     },
   },
   workspace: {
     title: "Workspace",
-    tabsLabel: "App previews",
+    preview: {
+      open: "Enlarge",
+      close: "Close preview",
+      previous: "Previous image",
+      next: "Next image",
+      zoomIn: "Zoom in",
+      zoomOut: "Zoom out",
+      fit: "Fit to window",
+      rotateLeft: "Rotate left",
+      rotateRight: "Rotate right",
+    },
     items: {
-      conversation: {
-        label: "Chat",
-        alt: "Setsuna project sidebar, AI code review conversation, and developer tools panel",
+      home: {
+        title: "New chat",
+        alt: "Setsuna Desktop new chat screen with projects, workspace selection, and model selection",
       },
-      changes: {
-        label: "Changes",
-        alt: "AI conversation, code diff, and Git commit panel side by side in Setsuna",
+      conversation: {
+        title: "Coding workspace",
+        alt: "Setsuna Desktop coding workspace with an AI conversation, code review, and integrated terminal side by side",
       },
       review: {
-        label: "Pull Request",
-        alt: "Setsuna pull request workspace with a PR list, file diffs, and check results",
+        title: "Pull Request",
+        alt: "Setsuna Desktop pull request workspace with a PR list, file diffs, and check results",
+      },
+      automations: {
+        title: "Automations",
+        alt: "Setsuna Desktop automations page with a scheduled task composer and execution history sidebar",
+      },
+      plugins: {
+        title: "Plugins",
+        alt: "Setsuna Desktop plugin catalog with installed and featured plugins, plus Skills and MCP navigation",
+      },
+      appBuilder: {
+        title: "App builder",
+        alt: "Setsuna Desktop app creation dialog with table, data collection, ECharts, and custom idea templates",
       },
     },
   },

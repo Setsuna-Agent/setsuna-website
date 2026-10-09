@@ -2,7 +2,7 @@ import { site } from "@/lib/site";
 
 // Keep every package and its checksum on the same verified release.
 // Update this version when publishing new desktop downloads on the website.
-const version = "0.4.1";
+const version = "0.5.1";
 const releaseUrl = `${site.repository}/releases/tag/v${version}`;
 const assetRoot = `${site.repository}/releases/download/v${version}`;
 

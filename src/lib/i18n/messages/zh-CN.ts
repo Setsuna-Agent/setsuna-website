@@ -2,8 +2,9 @@ export const zhCN = {
   metadata: {
     title: "Setsuna Desktop — 开源的桌面 AI 编程助手",
     description:
-      "Setsuna 是开源的桌面 AI 编程助手。将 AI 对话、代码变更、Pull Request 与开发工具汇集于一个专注的工作空间，支持 macOS 与 Windows。",
-    openGraphDescription: "开源的桌面 AI 编程助手，支持 macOS 与 Windows。",
+      "Setsuna 是开源的桌面 AI 编程助手，支持 macOS 与 Windows。集成项目对话、代码审查、内置浏览器、电脑控制、本地自动化与应用构建。",
+    openGraphDescription:
+      "集代码审查、本地自动化与应用构建于一体的开源桌面 AI 编程助手。",
   },
   common: {
     home: "Setsuna 首页",
@@ -15,6 +16,8 @@ export const zhCN = {
     workspace: "工作空间",
     download: "下载",
     source: "在 GitHub 查看源码",
+    lightMode: "切换为日间模式",
+    darkMode: "切换为夜间模式",
   },
   hero: {
     description: "开源的桌面 AI 编程助手。",
@@ -26,15 +29,33 @@ export const zhCN = {
     items: {
       conversation: {
         title: "项目对话",
-        description: "结合项目上下文，处理代码与终端任务。",
+        description:
+          "结合项目上下文编程，搜索或分叉对话，在独立窗口和 Git worktree 中继续。",
       },
       files: {
         title: "文件管理",
-        description: "浏览、搜索项目文件，直接编辑、预览与管理目录。",
+        description:
+          "浏览、搜索与编辑项目文件，预览 Markdown 和图片，管理项目目录。",
       },
       browser: {
-        title: "浏览器 CDP",
-        description: "内置浏览器，通过 CDP 读取页面、点击、输入与截图。",
+        title: "内置浏览器",
+        description:
+          "CDP 网页操作、批注与密码填充，支持安装或导入兼容的 Chrome 扩展。",
+      },
+      computerControl: {
+        title: "电脑控制",
+        description:
+          "按需启用截图、点击、输入与滚动，让 AI 操作 macOS 或 Windows 应用。",
+      },
+      automations: {
+        title: "本地自动化",
+        description:
+          "通过对话或表单创建本机定时任务，在应用运行时执行，并查看运行记录。",
+      },
+      appBuilder: {
+        title: "应用构建",
+        description:
+          "从模板或想法创建侧栏应用，通过对话持续修改，并用 @ 引用。",
       },
       localTools: {
         title: "本地工具",
@@ -42,11 +63,12 @@ export const zhCN = {
       },
       review: {
         title: "代码审查",
-        description: "查看代码差异，管理 Pull Request。",
+        description:
+          "查看代码差异与 Markdown 预览，管理 Pull Request 和检查结果。",
       },
       models: {
         title: "模型选择",
-        description: "连接并切换你使用的模型服务。",
+        description: "连接模型供应商，切换模型并设置思考强度。",
       },
       proxy: {
         title: "代理服务器",
@@ -58,25 +80,48 @@ export const zhCN = {
       },
       extensions: {
         title: "工具扩展",
-        description: "通过插件、Skills 和 MCP 接入工具。",
+        description:
+          "通过插件、Skills、MCP 和 Hook 扩展任务流程，在对话中查看执行记录。",
       },
     },
   },
   workspace: {
     title: "工作空间",
-    tabsLabel: "产品界面",
+    preview: {
+      open: "放大查看",
+      close: "关闭预览",
+      previous: "上一张",
+      next: "下一张",
+      zoomIn: "放大",
+      zoomOut: "缩小",
+      fit: "适应窗口",
+      rotateLeft: "向左旋转",
+      rotateRight: "向右旋转",
+    },
     items: {
-      conversation: {
-        label: "对话",
-        alt: "Setsuna 的项目侧栏、AI 代码审查对话与开发工具面板",
+      home: {
+        title: "新对话",
+        alt: "Setsuna Desktop 新对话页面，展示项目列表、工作区选择与模型选择",
       },
-      changes: {
-        label: "代码变更",
-        alt: "Setsuna 中并排显示的 AI 对话、代码变更 diff 与 Git 提交面板",
+      conversation: {
+        title: "编程工作区",
+        alt: "Setsuna Desktop 编程工作区，并排展示 AI 对话、代码审查与集成终端",
       },
       review: {
-        label: "Pull Request",
-        alt: "Setsuna Pull Request 工作区展示 PR 列表、文件差异和检查结果",
+        title: "Pull Request",
+        alt: "Setsuna Desktop Pull Request 工作区，展示 PR 列表、文件差异和检查结果",
+      },
+      automations: {
+        title: "自动化",
+        alt: "Setsuna Desktop 自动化页面，展示定时任务创建输入框与运行记录侧栏",
+      },
+      plugins: {
+        title: "插件",
+        alt: "Setsuna Desktop 插件目录，展示已安装插件、推荐插件和 Skills、MCP 入口",
+      },
+      appBuilder: {
+        title: "应用构建",
+        alt: "Setsuna Desktop 应用创建窗口，展示表格、数据收集、ECharts 和自定义想法模板",
       },
     },
   },

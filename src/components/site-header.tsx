@@ -2,6 +2,7 @@ import { ArrowUpRight } from "lucide-react";
 import { GithubIcon } from "@/components/github-icon";
 import { Brand } from "@/components/brand";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { ThemeSwitcher } from "@/components/theme-switcher";
 import { site } from "@/lib/site";
 import type { Locale } from "@/lib/i18n/config";
 import type { Messages } from "@/lib/i18n/messages";
@@ -41,6 +42,7 @@ export function SiteHeader({
           >
             <GithubIcon />
           </a>
+          <ThemeSwitcher messages={messages} />
           <LanguageSwitcher locale={locale} />
           <a href="#download" className="button button-small button-outline">
             {messages.download} <ArrowUpRight size={15} aria-hidden="true" />

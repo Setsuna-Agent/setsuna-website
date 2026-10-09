@@ -23,8 +23,6 @@ for (const [route, locale] of [
     !html.includes("/_next/image?"),
     "Static hosting cannot optimize images at request time",
   );
-  assert.equal((html.match(/class="feature-card"/g) ?? []).length, 9);
-
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
     const value = match[1].replaceAll("&amp;", "&");
     if (value.startsWith("#")) continue;

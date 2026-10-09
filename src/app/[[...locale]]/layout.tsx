@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { localePath, locales, resolveLocale } from "@/lib/i18n/config";
 import { getMessages } from "@/lib/i18n/messages";
 import { withBasePath } from "@/lib/paths";
+import { themeInitScript } from "@/lib/theme";
 import "../globals.css";
 
 const geist = localFont({
@@ -46,8 +47,8 @@ export async function generateMetadata({
 }
 
 export const viewport: Viewport = {
-  themeColor: "#161616",
-  colorScheme: "dark",
+  themeColor: "#f8f7f4",
+  colorScheme: "light dark",
 };
 
 export default async function RootLayout({
@@ -59,8 +60,14 @@ export default async function RootLayout({
   const messages = getMessages(locale);
 
   return (
-    <html lang={locale} className={geist.variable}>
+    <html
+      lang={locale}
+      className={geist.variable}
+      data-theme="light"
+      suppressHydrationWarning
+    >
       <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
         {locales.map((language) => (
           <link
             key={language}

@@ -1,11 +1,14 @@
 import {
   Blocks,
+  Clock3,
   CloudUpload,
   FolderTree,
   GitPullRequest,
   Globe,
   MessagesSquare,
+  MousePointer2,
   Network,
+  PanelsTopLeft,
   SlidersHorizontal,
   Terminal,
 } from "lucide-react";
@@ -14,13 +17,16 @@ import type { Messages } from "@/lib/i18n/messages";
 const features = [
   { id: "conversation", icon: MessagesSquare },
   { id: "files", icon: FolderTree },
-  { id: "browser", icon: Globe },
-  { id: "localTools", icon: Terminal },
   { id: "review", icon: GitPullRequest },
+  { id: "browser", icon: Globe },
+  { id: "computerControl", icon: MousePointer2 },
+  { id: "automations", icon: Clock3 },
+  { id: "appBuilder", icon: PanelsTopLeft },
   { id: "models", icon: SlidersHorizontal },
+  { id: "extensions", icon: Blocks },
+  { id: "localTools", icon: Terminal },
   { id: "proxy", icon: Network },
   { id: "webdav", icon: CloudUpload },
-  { id: "extensions", icon: Blocks },
 ] as const;
 
 export function Features({ messages }: { messages: Messages["features"] }) {
